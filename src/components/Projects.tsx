@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Eye, Github, ExternalLink, Bot, Shield, Zap, Camera } from 'lucide-react';
+import { Eye, Github, ExternalLink, Bot, Shield, Camera, Star, Award } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const [ref, inView] = useInView({
@@ -35,19 +35,6 @@ const Projects: React.FC = () => {
         "Advanced feature engineering",
         "Balanced dataset handling"
       ]
-    },
-    {
-      title: "Neural Network Optimizer",
-      description: "Custom implementation of advanced optimization algorithms for deep learning models. Includes adaptive learning rate scheduling and momentum-based techniques for improved convergence.",
-      technologies: ["TensorFlow", "Keras", "Python", "NumPy", "Matplotlib"],
-      icon: Zap,
-      gradient: "from-green-500 to-teal-500",
-      features: [
-        "Custom optimization algorithms",
-        "Adaptive learning rate scheduling",
-        "Performance visualization tools",
-        "Multiple activation functions"
-      ]
     }
   ];
 
@@ -59,15 +46,20 @@ const Projects: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-4">
-          Featured Projects
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 mx-auto"></div>
-        <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
-          Innovative AI/ML solutions that demonstrate cutting-edge technology and practical applications
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
+          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <Star className="w-8 h-8 text-yellow-400 animate-pulse" />
+        </div>
+        <div className="w-32 h-1 bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 mx-auto mb-4"></div>
+        <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
+          🚀 Innovative AI/ML solutions showcasing cutting-edge technology and real-world impact
         </p>
       </motion.div>
 
+      {/* Horizontal Projects */}
       <div className="space-y-12">
         {projects.map((project, index) => (
           <motion.div
@@ -77,10 +69,17 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.8, delay: index * 0.3 }}
             className="group relative"
           >
-            <div className={`glassmorphism rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500 group-hover:scale-[1.02]`}>
-              {/* Glowing background effect */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-              
+            <div className="glassmorphism rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500 group-hover:scale-[1.02]">
+                {/* Animated background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-all duration-700`}></div>
+                
+                {/* Floating award badge */}
+                <div className="absolute top-4 right-4 z-20">
+                  <div className={`p-2 bg-gradient-to-r ${project.gradient} rounded-full shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
+                    <Award className="w-5 h-5 text-white" />
+                  </div>
+                </div>
+                
               <div className="relative z-10 p-8 lg:p-12">
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                   
@@ -143,12 +142,11 @@ const Projects: React.FC = () => {
                   {/* Project Visualization */}
                   <div className={`${index % 2 === 1 ? 'lg:order-1' : ''} relative`}>
                     <div className="relative group/visual">
-                      {/* Animated Robot/AI Illustration Placeholder */}
                       <div className={`aspect-square bg-gradient-to-br ${project.gradient} rounded-2xl flex items-center justify-center relative overflow-hidden`}>
                         <div className="absolute inset-0 bg-black/20"></div>
                         <Bot className="w-24 h-24 text-white/90 relative z-10 group-hover/visual:animate-bounce" />
                         
-                        {/* Floating elements around the icon */}
+                        {/* Floating elements */}
                         {[...Array(8)].map((_, i) => (
                           <motion.div
                             key={i}
@@ -179,10 +177,28 @@ const Projects: React.FC = () => {
 
                 </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+              </div>
+            </motion.div>
+          ))}
       </div>
+      
+      {/* Call to Action */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 1 }}
+        className="text-center mt-16"
+      >
+        <div className="glassmorphism p-8 rounded-2xl border border-cyan-500/30 max-w-2xl mx-auto">
+          <h3 className="text-2xl font-bold text-white mb-4">🚀 Ready to Collaborate?</h3>
+          <p className="text-gray-300 mb-6">
+            These projects represent just the beginning. Let's build something amazing together!
+          </p>
+          <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500 rounded-xl font-semibold text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25">
+            Get In Touch
+          </button>
+        </div>
+      </motion.div>
     </section>
   );
 };
