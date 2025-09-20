@@ -143,8 +143,8 @@ src/
 - **IBM Data Fundamentals** - Comprehensive data analysis and visualization
 - **Python for Data Science** - Advanced Python techniques for ML
 - **FastTrack Python** - Intensive programming bootcamp
-- **Sports Excellence** - Kabaddi Championship & Volleyball Team Captain
-- **Technical Competitions** - Top performer in multiple hackathons
+- **Sports Excellence** - 2 Sports Certifications & Competition Winner
+- **Technical Competitions** - Participated in 3 hackathons
 
 ## 🎓 Education
 
@@ -220,9 +220,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **Pavan Ayithireddy**
-- **Email**: pavan.ayithireddy@gmail.com
-- **LinkedIn**: [linkedin.com/in/pavan-ayithireddy](https://linkedin.com/in/pavan-ayithireddy)
-- **GitHub**: [github.com/pavan-ayithireddy](https://github.com/pavan-ayithireddy)
+- **Email**: ayithireddypavan8466@gmail.com
+- **Phone**: +91 9603698176
+- **LinkedIn**: [linkedin.com/in/pavan-ayithireddy-67a487245](https://www.linkedin.com/in/pavan-ayithireddy-67a487245/)
+- **GitHub**: [github.com/pav16an](https://github.com/pav16an)
 - **Location**: Ghaziabad, Uttar Pradesh, India
 
 ## 🙏 Acknowledgments

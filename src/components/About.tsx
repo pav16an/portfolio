@@ -34,8 +34,13 @@ const About: React.FC = () => {
           <div className="glassmorphism p-8 rounded-2xl border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 rounded-2xl blur-xl"></div>
             <div className="relative">
-              <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center">
-                <User className="w-16 h-16 text-white" />
+              <div className="w-32 h-32 mx-auto mb-6 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full blur-sm opacity-75"></div>
+                <img 
+                  src="https://res.cloudinary.com/dvadfv5zz/image/upload/v1758367823/273A0275_burn5j.jpg" 
+                  alt="Pavan Ayithireddy" 
+                  className="relative w-32 h-32 rounded-full object-cover border-4 border-cyan-400 shadow-2xl hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <p className="text-gray-300 leading-relaxed">
                 Passionate AI/ML Developer with expertise in Python, machine learning algorithms, 

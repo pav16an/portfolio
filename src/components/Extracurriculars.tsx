@@ -14,20 +14,20 @@ const Extracurriculars: React.FC = () => {
       category: "Sports Excellence",
       items: [
         {
-          title: "Kabaddi Championship",
-          description: "Regional champion in inter-college kabaddi tournaments. Led team to victory with strategic gameplay and leadership.",
-          achievement: "1st Place - Regional Tournament",
+          title: "Sports Certification - Level 1",
+          description: "Achieved sports certification demonstrating athletic skills and commitment to physical fitness and team sports.",
+          achievement: "Certified Athlete",
           icon: Trophy,
           gradient: "from-yellow-500 to-orange-600",
-          stats: "15+ matches won"
+          stats: "Level 1 Certified"
         },
         {
-          title: "Volleyball Team Captain",
-          description: "Captain of college volleyball team, organizing training sessions and leading team in various competitions.",
-          achievement: "Team Captain & Top Performer",
+          title: "Sports Competition Winner",
+          description: "Participated and excelled in inter-college sports competitions, showcasing teamwork and competitive spirit.",
+          achievement: "Competition Winner",
           icon: Medal,
           gradient: "from-blue-500 to-purple-600",
-          stats: "3 years leadership"
+          stats: "2 competitions won"
         }
       ]
     },
@@ -35,20 +35,12 @@ const Extracurriculars: React.FC = () => {
       category: "Technical Competitions",
       items: [
         {
-          title: "Hackathon Leaderboards",
-          description: "Consistent top performer in AI/ML hackathons with innovative solutions and technical excellence.",
-          achievement: "Top 5 in Multiple Hackathons",
+          title: "Hackathon Participant",
+          description: "Participated in 3 major hackathons, developing innovative AI/ML solutions and collaborating with diverse teams.",
+          achievement: "3 Hackathons Completed",
           icon: Crown,
           gradient: "from-green-500 to-teal-600",
-          stats: "10+ hackathons participated"
-        },
-        {
-          title: "Coding Competitions",
-          description: "Active participant in competitive programming contests, specializing in algorithmic problem solving.",
-          achievement: "Regional Finalist",
-          icon: Zap,
-          gradient: "from-purple-500 to-pink-600",
-          stats: "500+ problems solved"
+          stats: "3 hackathons participated"
         }
       ]
     }
@@ -166,10 +158,10 @@ const Extracurriculars: React.FC = () => {
         className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
       >
         {[
-          { label: "Sports Medals", value: "15+", icon: Medal },
-          { label: "Team Leadership", value: "3 Years", icon: Users },
-          { label: "Hackathons", value: "10+", icon: Zap },
-          { label: "Competitions", value: "25+", icon: Trophy }
+          { label: "Sports Certifications", value: "2", icon: Medal },
+          { label: "Competitions Won", value: "2", icon: Users },
+          { label: "Hackathons", value: "3", icon: Zap },
+          { label: "Total Events", value: "5+", icon: Trophy }
         ].map((stat, index) => (
           <motion.div
             key={stat.label}

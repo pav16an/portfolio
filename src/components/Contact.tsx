@@ -13,34 +13,34 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "pavan.ayithireddy@gmail.com",
-      href: "mailto:pavan.ayithireddy@gmail.com",
+      value: "ayithireddypavan8466@gmail.com",
+      href: "mailto:ayithireddypavan8466@gmail.com",
       gradient: "from-red-500 to-pink-600",
       description: "Let's discuss opportunities and collaborations"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/pavan-ayithireddy",
-      href: "https://linkedin.com/in/pavan-ayithireddy",
+      value: "linkedin.com/in/pavan-ayithireddy-67a487245",
+      href: "https://www.linkedin.com/in/pavan-ayithireddy-67a487245/",
       gradient: "from-blue-600 to-blue-800",
       description: "Connect for professional networking"
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/pavan-ayithireddy",
-      href: "https://github.com/pavan-ayithireddy",
+      value: "github.com/pav16an",
+      href: "https://github.com/pav16an",
       gradient: "from-gray-600 to-gray-800",
       description: "Explore my projects and contributions"
     },
     {
       icon: MapPin,
-      label: "Location",
-      value: "Ghaziabad, Uttar Pradesh, India",
-      href: "#",
+      label: "Phone",
+      value: "+91 9603698176",
+      href: "tel:+919603698176",
       gradient: "from-green-500 to-emerald-600",
-      description: "Available for remote and on-site opportunities"
+      description: "Available for calls and discussions"
     }
   ];
 
