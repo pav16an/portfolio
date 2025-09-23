@@ -131,7 +131,7 @@ const Experience: React.FC = () => {
                       <Award className="w-4 h-4" />
                       Key Achievements
                     </h5>
-                    <ul className="space-y-1">
+                    <ul className="space-y-1 mb-4">
                       {experience.achievements.map((achievement, i) => (
                         <li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
                           <div className={`w-1.5 h-1.5 bg-gradient-to-r ${experience.gradient} rounded-full mt-2 flex-shrink-0`}></div>
@@ -139,6 +139,32 @@ const Experience: React.FC = () => {
                         </li>
                       ))}
                     </ul>
+                    
+                    {/* Certificate Links */}
+                    {experience.company === "Feynn Labs" && (
+                      <a href="https://www.pdffiller.com/s/xrC1qGwaX" target="_blank" rel="noopener noreferrer">
+                        <button className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${experience.gradient} rounded-lg text-white text-sm font-semibold hover:scale-105 transition-transform duration-300`}>
+                          <Award className="w-4 h-4" />
+                          View Certificate
+                        </button>
+                      </a>
+                    )}
+                    {experience.company === "Cognifyz Technologies" && (
+                      <a href="https://www.pdffiller.com/s/Z4BK3yKl" target="_blank" rel="noopener noreferrer">
+                        <button className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${experience.gradient} rounded-lg text-white text-sm font-semibold hover:scale-105 transition-transform duration-300`}>
+                          <Award className="w-4 h-4" />
+                          View Certificate
+                        </button>
+                      </a>
+                    )}
+                    {experience.company === "IIIT (Indian Institute of Information Technology)" && (
+                      <a href="https://www.pdffiller.com/s/zbKn1Gqny" target="_blank" rel="noopener noreferrer">
+                        <button className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${experience.gradient} rounded-lg text-white text-sm font-semibold hover:scale-105 transition-transform duration-300`}>
+                          <Award className="w-4 h-4" />
+                          View Certificate
+                        </button>
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>

@@ -21,7 +21,7 @@ const Certificates: React.FC = () => {
     },
     {
       title: "Python for Data Science",
-      issuer: "Coursera",
+      issuer: "Cognitive Classes",
       date: "2024",
       description: "Advanced Python programming techniques for data science applications including pandas, numpy, and scikit-learn.",
       skills: ["Python", "Pandas", "NumPy", "Scikit-learn"],
@@ -30,7 +30,7 @@ const Certificates: React.FC = () => {
     },
     {
       title: "FastTrack Python",
-      issuer: "Tech Academy",
+      issuer: "iNeuron",
       date: "2023",
       description: "Intensive Python programming bootcamp covering object-oriented programming, web development, and automation.",
       skills: ["Python Programming", "OOP", "Web Development", "Automation"],
@@ -116,10 +116,33 @@ const Certificates: React.FC = () => {
                 </div>
 
                 {/* Action Button */}
-                <button className="group/btn w-full flex items-center justify-center gap-2 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 hover:border-cyan-400 rounded-lg text-gray-300 hover:text-cyan-400 text-sm font-medium transition-all duration-300">
-                  <ExternalLink className="w-4 h-4 group-hover/btn:animate-pulse" />
-                  View Certificate
-                </button>
+                {cert.title === "IBM Data Fundamentals" ? (
+                  <a href="https://www.pdffiller.com/s/kOeq4AyCS" target="_blank" rel="noopener noreferrer">
+                    <button className="group/btn w-full flex items-center justify-center gap-2 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 hover:border-cyan-400 rounded-lg text-gray-300 hover:text-cyan-400 text-sm font-medium transition-all duration-300">
+                      <ExternalLink className="w-4 h-4 group-hover/btn:animate-pulse" />
+                      View Certificate
+                    </button>
+                  </a>
+                ) : cert.title === "Python for Data Science" ? (
+                  <a href="https://www.pdffiller.com/s/a53-Z6Cj" target="_blank" rel="noopener noreferrer">
+                    <button className="group/btn w-full flex items-center justify-center gap-2 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 hover:border-cyan-400 rounded-lg text-gray-300 hover:text-cyan-400 text-sm font-medium transition-all duration-300">
+                      <ExternalLink className="w-4 h-4 group-hover/btn:animate-pulse" />
+                      View Certificate
+                    </button>
+                  </a>
+                ) : cert.title === "FastTrack Python" ? (
+                  <a href="https://www.pdffiller.com/s/PzbQNPl6" target="_blank" rel="noopener noreferrer">
+                    <button className="group/btn w-full flex items-center justify-center gap-2 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 hover:border-cyan-400 rounded-lg text-gray-300 hover:text-cyan-400 text-sm font-medium transition-all duration-300">
+                      <ExternalLink className="w-4 h-4 group-hover/btn:animate-pulse" />
+                      View Certificate
+                    </button>
+                  </a>
+                ) : (
+                  <button className="group/btn w-full flex items-center justify-center gap-2 py-2 bg-gray-800 hover:bg-gray-700 border border-gray-600 hover:border-cyan-400 rounded-lg text-gray-300 hover:text-cyan-400 text-sm font-medium transition-all duration-300">
+                    <ExternalLink className="w-4 h-4 group-hover/btn:animate-pulse" />
+                    View Certificate
+                  </button>
+                )}
               </div>
 
               {/* Decorative elements */}

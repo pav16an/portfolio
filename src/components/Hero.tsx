@@ -54,12 +54,18 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.5 }}
-          className="mb-16"
+          className="mb-16 flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full font-semibold text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50">
             <span className="relative z-10">Explore My Work</span>
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
+          <a href="https://ayithireddy-pavan-ml-resume.tiiny.site" target="_blank" rel="noopener noreferrer">
+            <button className="group relative px-8 py-4 bg-gradient-to-r from-green-500 to-teal-600 rounded-full font-semibold text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/50">
+              <span className="relative z-10">Resume</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-green-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+          </a>
         </motion.div>
 
         {/* Scroll Indicator */}
