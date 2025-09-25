@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import ParticleBackground from './components/ParticleBackground';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,21 +13,23 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-gray-900 text-white overflow-x-hidden">
-      <ParticleBackground />
-      
-      <div className="relative z-10">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Certificates />
-        <Education />
-        <Extracurriculars />
-        <Contact />
+    <ThemeProvider>
+      <div className="relative min-h-screen overflow-x-hidden">
+        <ParticleBackground />
+        
+        <div className="relative z-10">
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Experience />
+          <Certificates />
+          <Education />
+          <Extracurriculars />
+          <Contact />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useTheme } from '../contexts/ThemeContext';
 import { 
   Code2, 
   Database, 
@@ -16,6 +17,7 @@ import {
 } from 'lucide-react';
 
 const Skills: React.FC = () => {
+  const { isDark } = useTheme();
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -50,7 +52,7 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 px-6 max-w-7xl mx-auto">
+    <section ref={ref} className={`py-20 px-6 max-w-7xl mx-auto ${isDark ? 'text-white' : 'text-gray-900'}`}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -96,7 +98,7 @@ const Skills: React.FC = () => {
                     }}
                     className="group relative perspective-1000"
                   >
-                    <div className="glassmorphism p-6 rounded-2xl border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500 group-hover:scale-105 group-hover:rotate-1 transform-gpu">
+                    <div className={`glassmorphism p-6 rounded-2xl border ${isDark ? 'border-gray-700/50 hover:border-cyan-400/50' : 'border-gray-300 hover:border-blue-400/50'} transition-all duration-500 group-hover:scale-105 group-hover:rotate-1 transform-gpu`}>
                       {/* Animated background */}
                       <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-all duration-500`}></div>
                       
@@ -116,10 +118,10 @@ const Skills: React.FC = () => {
                         </div>
 
                         {/* Skill Info */}
-                        <h4 className="text-white font-bold text-xl mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                        <h4 className={`${isDark ? 'text-white group-hover:text-cyan-400' : 'text-gray-900 group-hover:text-blue-600'} font-bold text-xl mb-2 transition-colors duration-300`}>
                           {skill.name}
                         </h4>
-                        <p className="text-gray-400 text-sm mb-4 group-hover:text-gray-300 transition-colors duration-300">
+                        <p className={`${isDark ? 'text-gray-400 group-hover:text-gray-300' : 'text-gray-600 group-hover:text-gray-500'} text-sm mb-4 transition-colors duration-300`}>
                           {skill.description}
                         </p>
 

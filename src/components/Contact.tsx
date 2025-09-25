@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Linkedin, Github, MapPin, Bot, Send, ExternalLink } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Contact: React.FC = () => {
+  const { isDark } = useTheme();
   const [ref, inView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -45,7 +47,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 px-6 max-w-7xl mx-auto">
+    <section ref={ref} className={`py-20 px-6 max-w-7xl mx-auto ${isDark ? 'text-white' : 'text-gray-900'}`}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -155,7 +157,7 @@ const Contact: React.FC = () => {
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <div className="glassmorphism p-6 rounded-2xl border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500 transform hover:scale-[1.02] cursor-pointer">
+                <div className={`glassmorphism p-6 rounded-2xl border ${isDark ? 'border-gray-700/50 hover:border-cyan-400/50' : 'border-gray-300 hover:border-blue-400/50'} transition-all duration-500 transform hover:scale-[1.02] cursor-pointer`}>
                   
                   {/* Glowing background effect */}
                   <div className={`absolute inset-0 bg-gradient-to-r ${contact.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`}></div>
@@ -177,11 +179,11 @@ const Contact: React.FC = () => {
                         )}
                       </div>
                       
-                      <p className="text-cyan-300 font-medium mb-2 break-all">
+                      <p className={`${isDark ? 'text-cyan-300' : 'text-blue-600'} font-medium mb-2 break-all`}>
                         {contact.value}
                       </p>
                       
-                      <p className="text-gray-400 text-sm">
+                      <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} text-sm`}>
                         {contact.description}
                       </p>
                     </div>

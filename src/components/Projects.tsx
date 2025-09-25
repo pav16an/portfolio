@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Eye, Github, ExternalLink, Bot, Shield, Camera, Star, Award } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Projects: React.FC = () => {
+  const { isDark } = useTheme();
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -39,7 +41,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 px-6 max-w-7xl mx-auto">
+    <section ref={ref} className={`py-20 px-6 max-w-7xl mx-auto ${isDark ? 'text-white' : 'text-gray-900'}`}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -69,7 +71,7 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.8, delay: index * 0.3 }}
             className="group relative"
           >
-            <div className="glassmorphism rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500 group-hover:scale-[1.02]">
+            <div className={`glassmorphism rounded-2xl overflow-hidden border ${isDark ? 'border-gray-700/50 hover:border-cyan-400/50' : 'border-gray-300 hover:border-blue-400/50'} transition-all duration-500 group-hover:scale-[1.02]`}>
                 {/* Animated background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-all duration-700`}></div>
                 
@@ -90,11 +92,11 @@ const Projects: React.FC = () => {
                       <project.icon className="w-8 h-8 text-white" />
                     </div>
 
-                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                    <h3 className={`text-2xl lg:text-3xl font-bold ${isDark ? 'text-white group-hover:text-cyan-400' : 'text-gray-900 group-hover:text-blue-600'} mb-4 transition-colors duration-300`}>
                       {project.title}
                     </h3>
 
-                    <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} text-lg leading-relaxed mb-6`}>
                       {project.description}
                     </p>
 
