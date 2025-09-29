@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Trophy, Users, Target, Zap, Medal, Crown } from 'lucide-react';
+import InteractiveBackground from './InteractiveBackground';
+import './InteractiveBackground.css';
 
 const Extracurriculars: React.FC = () => {
   const [ref, inView] = useInView({
@@ -47,7 +49,8 @@ const Extracurriculars: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 px-6 max-w-7xl mx-auto">
+    <InteractiveBackground className="py-20 px-6 max-w-7xl mx-auto dark">
+      <section ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -182,7 +185,8 @@ const Extracurriculars: React.FC = () => {
           </motion.div>
         ))}
       </motion.div>
-    </section>
+      </section>
+    </InteractiveBackground>
   );
 };
 

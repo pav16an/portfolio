@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Briefcase, MapPin, Calendar, Award } from 'lucide-react';
+import InteractiveBackground from './InteractiveBackground';
+import './InteractiveBackground.css';
 
 const Experience: React.FC = () => {
   const [ref, inView] = useInView({
@@ -52,7 +54,8 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 px-6 max-w-7xl mx-auto">
+    <InteractiveBackground className="py-20 px-6 max-w-7xl mx-auto dark">
+      <section ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -172,7 +175,8 @@ const Experience: React.FC = () => {
           </motion.div>
         ))}
       </div>
-    </section>
+      </section>
+    </InteractiveBackground>
   );
 };
 

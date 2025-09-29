@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useTheme } from '../contexts/ThemeContext';
+import InteractiveBackground from './InteractiveBackground';
+import './InteractiveBackground.css';
 import { 
   Code2, 
   Database, 
@@ -52,7 +54,8 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className={`py-20 px-6 max-w-7xl mx-auto ${isDark ? 'text-white' : 'text-gray-900'}`}>
+    <InteractiveBackground className={`py-20 px-6 max-w-7xl mx-auto ${isDark ? 'text-white dark' : 'text-gray-900'}`}>
+      <section ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -183,7 +186,8 @@ const Skills: React.FC = () => {
           />
         ))}
       </div>
-    </section>
+      </section>
+    </InteractiveBackground>
   );
 };
 

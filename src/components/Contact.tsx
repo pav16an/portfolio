@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Linkedin, Github, MapPin, Bot, Send, ExternalLink } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
+import InteractiveBackground from './InteractiveBackground';
+import './InteractiveBackground.css';
 
 const Contact: React.FC = () => {
   const { isDark } = useTheme();
@@ -47,7 +49,8 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className={`py-20 px-6 max-w-7xl mx-auto ${isDark ? 'text-white' : 'text-gray-900'}`}>
+    <InteractiveBackground className={`py-20 px-6 max-w-7xl mx-auto ${isDark ? 'text-white dark' : 'text-gray-900'}`}>
+      <section ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -227,7 +230,8 @@ const Contact: React.FC = () => {
           </span>
         </div>
       </motion.div>
-    </section>
+      </section>
+    </InteractiveBackground>
   );
 };
 

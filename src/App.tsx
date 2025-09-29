@@ -19,14 +19,14 @@ function App() {
         
         <div className="relative z-10">
           <Hero />
-          <About />
+          <div data-section="about"><About /></div>
+          <div data-section="projects"><Projects /></div>
+          <div data-section="experience"><Experience /></div>
           <Skills />
-          <Projects />
-          <Experience />
           <Certificates />
           <Education />
           <Extracurriculars />
-          <Contact />
+          <div data-section="contact"><Contact /></div>
         </div>
       </div>
     </ThemeProvider>

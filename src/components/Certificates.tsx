@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
+import InteractiveBackground from './InteractiveBackground';
+import './InteractiveBackground.css';
 
 const Certificates: React.FC = () => {
   const [ref, inView] = useInView({
@@ -40,7 +42,8 @@ const Certificates: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 px-6 max-w-7xl mx-auto">
+    <InteractiveBackground className="py-20 px-6 max-w-7xl mx-auto dark">
+      <section ref={ref}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -168,7 +171,8 @@ const Certificates: React.FC = () => {
           </span>
         </div>
       </motion.div>
-    </section>
+      </section>
+    </InteractiveBackground>
   );
 };
 
