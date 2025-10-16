@@ -338,9 +338,27 @@ body {
     }
 }
 
+/* Cursor Animation */
+.cursor-follower {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(147, 197, 253, 0.3) 0%, rgba(196, 181, 253, 0.2) 50%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.15s ease-out;
+    z-index: 1;
+    filter: blur(8px);
+}
+
 /* Dark mode adjustments */
 .portfolio-hero-section.dark {
     background-color: transparent;
+}
+
+.dark .cursor-follower {
+    background: radial-gradient(circle, rgba(147, 197, 253, 0.4) 0%, rgba(196, 181, 253, 0.3) 50%, transparent 70%);
 }
 
 .dark .light-mouse-follower {

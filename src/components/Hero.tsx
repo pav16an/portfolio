@@ -73,47 +73,10 @@ const Hero: React.FC = () => {
         '--mouse-y': `${mousePos.y}%`
       }}
     >
-      {/* Animated Light Background */}
+      {/* Simple Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Mouse Light Follower */}
-        <div className="light-mouse-follower" style={{
-          left: `${mousePos.x}%`,
-          top: `${mousePos.y}%`
-        }}></div>
-        
-        {/* Click Light Ripples */}
-        {ripples.map(ripple => (
-          <div
-            key={ripple.id}
-            className="light-ripple-effect"
-            style={{
-              left: ripple.x,
-              top: ripple.y
-            }}
-          ></div>
-        ))}
-        
-        {/* Floating Light Orbs */}
         <div className="light-orb light-orb-1"></div>
         <div className="light-orb light-orb-2"></div>
-        <div className="light-orb light-orb-3"></div>
-        <div className="light-orb light-orb-4"></div>
-        
-        {/* Moving Light Particles */}
-        {Array.from({length: 4}).map((_, i) => (
-          <div 
-            key={i}
-            className="light-particle"
-            style={{
-              left: `${25 + i * 25}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 1.5}s`
-            }}
-          ></div>
-        ))}
-        
-        {/* Gradient Wave */}
-        <div className="gradient-wave"></div>
       </div>
       
       {/* Enhanced Navigation */}
@@ -303,7 +266,7 @@ const Hero: React.FC = () => {
           >
             <div className="profile-ring-container flex items-center justify-center">
               <img 
-                src={`${process.env.PUBLIC_URL || ''}/images/profile.png`}
+                src="/images/profile.png"
                 alt="Pavan Ayithireddy" 
                 className="profile-image transform transition-all duration-300 hover:scale-[1.02]"
                 onError={(e) => {
