@@ -73,16 +73,19 @@ const Hero: React.FC = () => {
         '--mouse-y': `${mousePos.y}%`
       }}
     >
-      {/* Interactive Background Effects */}
+      {/* Animated Light Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Mouse Follower */}
-        <div className="mouse-follower"></div>
+        {/* Mouse Light Follower */}
+        <div className="light-mouse-follower" style={{
+          left: `${mousePos.x}%`,
+          top: `${mousePos.y}%`
+        }}></div>
         
-        {/* Click Ripples */}
+        {/* Click Light Ripples */}
         {ripples.map(ripple => (
           <div
             key={ripple.id}
-            className="click-ripple"
+            className="light-ripple-effect"
             style={{
               left: ripple.x,
               top: ripple.y
@@ -90,23 +93,27 @@ const Hero: React.FC = () => {
           ></div>
         ))}
         
-        {/* Interactive Gradient Orbs */}
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
+        {/* Floating Light Orbs */}
+        <div className="light-orb light-orb-1"></div>
+        <div className="light-orb light-orb-2"></div>
+        <div className="light-orb light-orb-3"></div>
+        <div className="light-orb light-orb-4"></div>
         
-        {/* Floating Particles */}
-        {Array.from({length: 12}).map((_, i) => (
+        {/* Moving Light Particles */}
+        {Array.from({length: 4}).map((_, i) => (
           <div 
             key={i}
-            className="floating-particle"
+            className="light-particle"
             style={{
-              left: `${Math.random() * 100}%`,
+              left: `${25 + i * 25}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`
+              animationDelay: `${i * 1.5}s`
             }}
           ></div>
         ))}
+        
+        {/* Gradient Wave */}
+        <div className="gradient-wave"></div>
       </div>
       
       {/* Enhanced Navigation */}
