@@ -303,7 +303,7 @@ const Hero: React.FC = () => {
           >
             <div className="profile-ring-container flex items-center justify-center">
               <img 
-                src="/images/profile.png" 
+                src={`${process.env.PUBLIC_URL || ''}/images/profile.png`}
                 alt="Pavan Ayithireddy" 
                 className="profile-image transform transition-all duration-300 hover:scale-[1.02]"
                 onError={(e) => {
