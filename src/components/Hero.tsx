@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Download, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
+import profileImage from '/images/profile.png';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -266,7 +267,7 @@ const Hero: React.FC = () => {
           >
             <div className="profile-ring-container flex items-center justify-center">
               <img 
-                src="./images/profile.png"
+                src={profileImage}
                 alt="Pavan Ayithireddy" 
                 className="profile-image transform transition-all duration-300 hover:scale-[1.02]"
                 onError={(e) => {
