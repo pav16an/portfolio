@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Eye, Github, ExternalLink, Bot, Shield, Camera, Star, Award } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
-import InteractiveBackground from './InteractiveBackground';
-import './InteractiveBackground.css';
+
 
 const Projects: React.FC = () => {
   const { isDark } = useTheme();
@@ -43,8 +42,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <InteractiveBackground className={`py-20 px-6 max-w-7xl mx-auto ${isDark ? 'text-white dark' : 'text-gray-900'}`}>
-      <section ref={ref}>
+    <section ref={ref} className={`py-20 px-6 max-w-7xl mx-auto ${isDark ? 'text-white dark' : 'text-gray-900'}`}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -204,8 +202,7 @@ const Projects: React.FC = () => {
           </button>
         </div>
       </motion.div>
-      </section>
-    </InteractiveBackground>
+    </section>
   );
 };
 

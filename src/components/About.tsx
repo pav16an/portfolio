@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { User, Target, Lightbulb, Zap } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
-import InteractiveBackground from './InteractiveBackground';
-import './InteractiveBackground.css';
+
 
 const About: React.FC = () => {
   const { isDark } = useTheme();
@@ -14,8 +13,7 @@ const About: React.FC = () => {
   });
 
   return (
-    <InteractiveBackground className={`portfolio-hero-section ${isDark ? 'dark' : ''} py-20 px-6 max-w-7xl mx-auto`}>
-      <section ref={ref}>
+    <section ref={ref} className={`portfolio-hero-section ${isDark ? 'dark' : ''} py-20 px-6 max-w-7xl mx-auto`}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -138,8 +136,7 @@ const About: React.FC = () => {
           ))}
         </div>
       </div>
-      </section>
-    </InteractiveBackground>
+    </section>
   );
 };
 
